@@ -1,0 +1,146 @@
+:root{
+	--moderate-violet: hsl(263, 55%, 52%);
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--white: hsl(0, 0%, 100%);
+	--light-gray: hsl(0, 0%, 81%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+	font-family: "Barlow Semi Condensed";
+	background: var(--light-grayish-blue);
+}
+
+h1,h2,h3,p,blockquote{
+	margin:0;
+}
+
+img{
+	width:35px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+section{
+	padding: 5rem 1.5rem;
+}
+
+article{
+	padding: 2rem;
+	border-radius: .5rem;
+	color: var(--fg-clr,var(--very-dark-blackish-blue));
+	background: var(--bg-clr,var(--white));
+}
+
+.violet{
+	--fg-clr: var(--white);
+	--bg-clr: var(--moderate-violet);
+}
+
+.grey{
+	--fg-clr: var(--white);
+	--bg-clr: var(--very-dark-grayish-blue);
+}
+
+.black{
+	--fg-clr: var(--white);
+	--bg-clr: var(--very-dark-blackish-blue);
+}
+
+
+.titles,.profile{
+	display: inline-block;
+}
+
+article p{
+	margin: 1rem 0;
+	font-size: 1.255rem;
+	font-weight: 600;
+}
+
+.titles{
+	font-size: .65rem;
+	margin-left: 1rem;
+	vertical-align: middle;
+}
+
+.titles h3{
+	opacity: 50%;
+}
+
+article blockquote{
+	opacity: 70%;
+	font-size: .88rem;
+	line-height: 1.15rem;
+}
+
+section article:not(.violet){
+	margin-top: 1.5rem;
+}
+
+@media screen and (min-width:945px) {
+	.flex{
+		display: flex;
+	}
+
+	section{
+		flex-direction: column;
+	}
+
+	section article:not(.violet){
+		margin-top: 0;
+	}
+
+	section>div>div+div,section>div:not(:first-child){
+		margin-top: 2.5rem;
+	}
+
+	section div:first-child div:nth-child(odd) article:first-child{
+		width: 70%;
+		margin-right: 2.5rem;
+	}
+
+	section div:first-child div:nth-child(odd) article:not(:first-child){
+		width: 30%;
+	}
+
+	section div:first-child div:nth-child(even) article:first-child{
+		width: 30%;
+		margin-right: 2.5rem;
+	}
+
+	section div:first-child div:nth-child(even) article:not(:first-child){
+		width: 70%;
+	}
+}
+
+@media screen and (min-width:1300px) {
+
+	section{
+		flex-direction: row;
+	}
+
+	section>div:first-child{
+		width: 79%;
+		margin-right: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	section>div:not(:first-child){
+		width: 21%;
+		margin-top: 0;
+	}
+
+	section>div:not(:first-child)>*{
+		height: 100%;
+	}
+
+}
