@@ -17,6 +17,13 @@ body{
 	background: var(--light-grayish-blue);
 }
 
+main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
 h1,h2,h3,p,blockquote{
 	margin:0;
 }
@@ -29,6 +36,7 @@ img{
 
 section{
 	padding: 5rem 1.5rem;
+	max-width: 1400px;
 }
 
 article{
@@ -124,6 +132,7 @@ section article:not(.violet){
 
 	section{
 		flex-direction: row;
+		padding: 0 1.5rem;
 	}
 
 	section>div:first-child{
@@ -139,8 +148,10 @@ section article:not(.violet){
 		margin-top: 0;
 	}
 
-	section>div:not(:first-child)>*{
-		height: 100%;
+	/*in case adding elements, the right column articles will fill their parent
+	 * height and thus not appear shorter than the left side content*/
+	section>div:not(:first-child) article{
+		height:100%;
 	}
 
 }
